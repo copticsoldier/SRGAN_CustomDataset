@@ -1,0 +1,10 @@
+LR_train/
+HR_train/
+LR_train_small/
+HR_train_small/
+model/
+result/
+venv/
+test_data/
+model_run.ipynb
+
