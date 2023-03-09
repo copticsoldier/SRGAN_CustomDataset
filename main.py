@@ -7,17 +7,17 @@ parser = argparse.ArgumentParser()
 def str2bool(v):
     return v.lower() in ('true')
 
-parser.add_argument("--LR_path", type = str, default = '../DIV2K/DIV2K_train_LR_bicubic/X4')
-parser.add_argument("--GT_path", type = str, default = '../DIV2K/DIV2K_train_HR/')
-parser.add_argument("--res_num", type = int, default = 16)
-parser.add_argument("--num_workers", type = int, default = 0)
-parser.add_argument("--batch_size", type = int, default = 16)
+parser.add_argument("--LR_path", type = str, default = '../DIV2K/DIV2K_train_LR_bicubic/X4') # Path to the folder containing the low resolution images for training
+parser.add_argument("--GT_path", type = str, default = '../DIV2K/DIV2K_train_HR/') # Path to the folder containing the high resolution images for training
+parser.add_argument("--res_num", type = int, default = 16) # Number of residual blocks
+parser.add_argument("--num_workers", type = int, default = 0) 
+parser.add_argument("--batch_size", type = int, default = 16) # Amount of datapoints being grouped together 
 parser.add_argument("--L2_coeff", type = float, default = 1.0)
 parser.add_argument("--adv_coeff", type = float, default = 1e-3)
 parser.add_argument("--tv_loss_coeff", type = float, default = 0.0)
 parser.add_argument("--pre_train_epoch", type = int, default = 8000)
 parser.add_argument("--fine_train_epoch", type = int, default = 4000)
-parser.add_argument("--scale", type = int, default = 4)
+parser.add_argument("--scale", type = int, default = 4) # Pixel scale difference between the low res and high res training images
 parser.add_argument("--patch_size", type = int, default = 24)
 parser.add_argument("--feat_layer", type = str, default = 'relu5_4')
 parser.add_argument("--vgg_rescale_coeff", type = float, default = 0.006)

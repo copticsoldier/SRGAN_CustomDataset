@@ -2,9 +2,10 @@ LR_train/
 HR_train/
 LR_train_small/
 HR_train_small/
+LR_test/
 model/
 result/
-venv/
+venv_gpu/
+venv_cpu/
 test_data/
 model_run.ipynb
-

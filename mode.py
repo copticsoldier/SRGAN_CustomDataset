@@ -193,8 +193,8 @@ def test_only(args):
     loader = DataLoader(dataset, batch_size = 1, shuffle = False, num_workers = args.num_workers)
     
     generator = Generator(img_feat = 3, n_feats = 64, kernel_size = 3, num_block = args.res_num)
-    generator.load_state_dict(torch.load(args.generator_path))
-    generator = generator.to(device)
+    generator.load_state_dict(torch.load(args.generator_path,map_location=torch.device(device)))
+    #generator = generator.to(device)
     generator.eval()
     
     with torch.no_grad():
@@ -205,7 +205,7 @@ def test_only(args):
             output = (output + 1.0) / 2.0
             output = output.transpose(1,2,0)
             result = Image.fromarray((output * 255.0).astype(np.uint8))
-            result.save('./result/res_%04d.png'%i)
+            result.save('./result/res_%04d.jpg'%i)
 
 
 
