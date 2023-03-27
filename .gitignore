@@ -7,6 +7,7 @@ model/
 result/
 venv_gpu/
 venv_cpu/
-test_data/
 bredbo_test/
 untitled-1.ipynb
+bredbo_jpg_results/
+model_run.ipynb
