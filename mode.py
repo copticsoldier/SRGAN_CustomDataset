@@ -81,7 +81,7 @@ def train(args):
     
     while fine_epoch < args.fine_train_epoch:
         
-        scheduler.step()
+        #scheduler.step()
         
         for i, tr_data in enumerate(loader):
             gt = tr_data['GT'].to(device)
@@ -120,6 +120,7 @@ def train(args):
             g_loss.backward()
             g_optim.step()
 
+        scheduler.step()
             
         fine_epoch += 1
 
@@ -129,7 +130,7 @@ def train(args):
             print(d_loss.item())
             print('=========')
 
-        if fine_epoch % 500 ==0:
+        if fine_epoch % 100 ==0:
             #torch.save(generator.state_dict(), './model/SRGAN_gene_%03d.pt'%fine_epoch)
             #torch.save(discriminator.state_dict(), './model/SRGAN_discrim_%03d.pt'%fine_epoch)
             torch.save(generator.state_dict(), './model/SRGAN_gene_%03d.pt'%fine_epoch)
