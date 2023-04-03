@@ -1,0 +1,12 @@
+LR_train/
+HR_train/
+LR_train_small/
+HR_train_small/
+LR_test/
+model/
+result/
+venv_gpu/
+venv_cpu/
+bredbo_test/
+untitled-1.ipynb
+bredbo_jpg_results/
